@@ -3,7 +3,7 @@
     <span class="center-title"><slot/></span>
     <router-link router :to="text.path" class="center-text"
                    v-for="text in footerText"
-                   :key="text.id" v-if="activeLink === true">{{text.text}}</router-link>
+                   :key="text.id" v-if="activeLink === true" @click="changeActive(text.pathId)">{{text.text}}</router-link>
     <span class="center-text" v-for="text in footerText"
           :key="text.id" v-else>
       {{text.text}}
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import reusedCode from "@/mixins/reusedCode";
+
 export default {
   name: "ListFooter",
   props: {
@@ -23,7 +25,8 @@ export default {
       type: Boolean,
       require: true
     }
-  }
+  },
+  mixins: [reusedCode]
 }
 </script>
 

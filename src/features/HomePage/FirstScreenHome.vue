@@ -113,6 +113,7 @@ export default {
     }
   }
 
+
 @media (max-width: 768px) {
   .first-screen-home-container {
     .content {
@@ -127,7 +128,7 @@ export default {
     .first-screen-home-container {
       .content {
         .left-content {
-          left: 0;
+          left: -30%;
         }
       }
     }

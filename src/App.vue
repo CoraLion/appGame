@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import '@/../../../testproject2/src/static/fonts.css'
+import '@/static/fonts.css'
 import LoadingTools from "@/shared/LoadingTools.vue";
 </script>
 

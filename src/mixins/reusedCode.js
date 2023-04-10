@@ -21,5 +21,8 @@ export default {
         getUrlContact(picture) {
             return require('../assets/contact-us-page/' + picture)
         },
+        changeActive(value) {
+            this.$store.commit('SET_HEADER_ACTIVE', value)
+        }
     }
 }

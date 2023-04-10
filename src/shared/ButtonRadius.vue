@@ -1,7 +1,9 @@
 <template>
-  <router-link class="container-button" router :to="pathUrl" v-if="pathUrl !== null">
-               <slot></slot>
-  </router-link>
+  <div class="container-button" v-if="pathUrl !== null">
+    <router-link router :to="pathUrl">
+      <slot></slot>
+    </router-link>
+  </div>
   <div class="container-button" v-else>
     <slot></slot>
   </div>
@@ -27,12 +29,13 @@ export default {
   border-radius: 6px;
   font-size: 13px;
   line-height: 20px;
-  min-width: 132px;
+  max-width: 132px;
+  width: 100%;
   max-height: 42px;
   min-height: 42px;
   background-color: var(--main-orange-light);
   transition: all .5s;
-  padding: 10px;
+  padding: 10px 25px;
 
   &:hover {
     cursor: pointer;

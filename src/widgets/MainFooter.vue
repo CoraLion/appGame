@@ -40,6 +40,8 @@
               <social-network-tools
                   :type-color="'black'"/>
         </div>
+
+
         <div class="bottom-content">
             <div class="bottom-center-content">
                 <p class="text-bottom-content">
@@ -66,10 +68,10 @@ export default {
       textLogo: 'LOGO',
       atLogo: '@Logo',
       text_about: [
-        {id: 0, text: 'Zeux', path: '/'},
-        {id: 1, text: 'Portfolio', path: '/services'},
-        {id: 2, text: 'Careers', path: '/news'},
-        {id: 3, text: 'Contact us', path: '/contact'}
+        {id: 0, text: 'Zeux', path: '/', pathId: 0},
+        {id: 1, text: 'Portfolio', path: '/services', pathId: 2},
+        {id: 2, text: 'Careers', path: '/news', pathId: 3},
+        {id: 3, text: 'Contact us', path: '/contact', pathId: 4}
       ],
       text_contact: [
         {id: 0, text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'},

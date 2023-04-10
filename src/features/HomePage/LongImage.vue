@@ -34,6 +34,7 @@ export default {
 
 <style scoped lang="scss">
  .long-image-container {
+   overflow-x: hidden;
    display: flex;
    justify-content: space-between;
    align-items: center;

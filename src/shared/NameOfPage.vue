@@ -2,7 +2,7 @@
   <div class="name-of-page">
     <router-link class="one-name"
                  router to="/"
-                 @click="changeActive">
+                 @click="changeActive(0)">
       {{nameFirstPath}}
     </router-link>
     <span class="row"> > </span>
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import reusedCode from "@/mixins/reusedCode";
+
 export default {
   name: "NameOfPage",
   data() {
@@ -18,11 +20,7 @@ export default {
       nameFirstPath: 'Home'
     }
   },
-  methods: {
-    changeActive() {
-      this.$store.commit('SET_HEADER_ACTIVE', 0)
-    }
-  }
+  mixins: [reusedCode]
 }
 </script>
 

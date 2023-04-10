@@ -1,13 +1,16 @@
 <template>
   <div class="container_logo">
-    <div class="content"
-         :class="activeSize === true ? 'active' : 0">
+    <router-link router to="/" class="content"
+         :class="activeSize === true ? 'active' : 0"
+                 @click="changeActive(0)">
       <slot/>
-    </div>
+    </router-link>
   </div>
 </template>
 
 <script>
+import reusedCode from "@/mixins/reusedCode";
+
 export default {
   name: "MainLogo",
   props: {
@@ -16,9 +19,7 @@ export default {
       require: true
     }
   },
-  mounted() {
-    console.log(this.activeSize)
-  }
+  mixins: [reusedCode]
 }
 </script>
 
@@ -35,6 +36,10 @@ export default {
 
     .active {
       font-size: 24px;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 

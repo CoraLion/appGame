@@ -1,6 +1,5 @@
 <template>
   <header class="header">
-    <div class="container">
       <div class="content">
         <div class="logo-content">
           <main-logo
@@ -10,7 +9,6 @@
           <menu-burger/>
         </div>
       </div>
-    </div>
   </header>
 </template>
 
@@ -31,11 +29,9 @@ export default {
      position: fixed;
      top: 0;
      left: 0;
-     width: 100%;
+     min-width: 100%;
      z-index: 997;
      transition: .2s all;
-     .container {
-       min-width: 100%;
        .content {
          display: flex;
          min-height: 138px;
@@ -45,6 +41,10 @@ export default {
          justify-content: space-between;
          align-items: center;
        }
+
+     .menu-content {
+       max-width: 680px;
+       width: 100%;
      }
    }
 

@@ -6,7 +6,7 @@
       <div class="dropdown-child" v-if="activeDropDown">
         <router-link router :to="text.path"
             v-for="text in textDropDown"
-            :key="text.id">
+            :key="text.id" @click="changeActive(text.pathId)">
           {{text.text}}
         </router-link>
       </div>
@@ -16,6 +16,7 @@
 
 <script>
 import ButtonRadius from "@/shared/ButtonRadius.vue";
+import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "DropDown",
@@ -26,6 +27,7 @@ export default {
       require: true
     }
   },
+  mixins: [reusedCode],
   data() {
     return {
       activeDropDown: false

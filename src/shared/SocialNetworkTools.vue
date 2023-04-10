@@ -71,6 +71,10 @@ export default {
     &:last-child {
       margin-right: 0;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .black {

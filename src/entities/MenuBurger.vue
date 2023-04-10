@@ -38,7 +38,6 @@
 <script>
 import HeaderMenuText from "@/shared/HeaderMenuText.vue";
 import ButtonRadius from "@/shared/ButtonRadius.vue";
-import index from "vuex";
 
 export default {
   name: "MenuBurger",
@@ -134,15 +133,14 @@ export default {
   align-items: center;
   flex-direction: row;
   justify-content: flex-end;
-  max-width: 675px;
   min-height: 42px;
 
   .menu-text-screen {
-    max-width: 74px;
+    max-width: 75px;
     margin-right: 88px;
 
     &:nth-last-child(-n + 2) {
-      margin-right: 36px;
+      margin-right: 35px;
     }
 
     &:last-child {
@@ -157,11 +155,19 @@ export default {
 
     .button-menu {
       position: relative;
-      min-width: 40px;
-      min-height: 40px;
+      width: 40px;
+      max-height: 40px;
       z-index: 999;
       margin: 0 15px;
 
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .menu-burger {
