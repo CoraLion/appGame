@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
 import ButtonLink from "@/shared/ButtonLink.vue";
@@ -25,7 +24,6 @@ import ButtonLink from "@/shared/ButtonLink.vue";
 export default {
   name: "NewsCardFull",
   components: {ButtonLink, MainParagraph, MainTitleSemiBold},
-  mixins: [reusedCode],
   props: {
     newsCard: {
       type: Object,

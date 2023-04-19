@@ -100,7 +100,7 @@ export default {
       }
     },
     activeMenuText(indexActive) {
-      this.$store.commit('SET_HEADER_ACTIVE', indexActive)
+      this.changeActive(indexActive)
       this.activeBurger = false;
       this.activePlus = false;
     },
@@ -117,7 +117,7 @@ export default {
   created() {
     this.menu_text.forEach((item) => {
       if(item.path === this.$route.path) {
-        this.$store.commit('SET_HEADER_ACTIVE', item.id)
+        this.changeActive(item.id)
       }
     })
   },

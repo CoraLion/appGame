@@ -15,7 +15,6 @@
 import MainParagraph from "@/shared/MainParagraph.vue";
 import MainTitleBold from "@/shared/MainTitleBold.vue";
 import TypeOfGameCard from "@/entities/TypeOfGameCard.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "TypeOfGames",
@@ -33,8 +32,7 @@ export default {
         {id: 5, image: '3d-modeling.svg', text: '3D Modelings'},
       ]
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

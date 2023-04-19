@@ -15,13 +15,11 @@
 <script>
 import MainTitle from "@/shared/MainTitleSemiBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
-import reusedCode from "@/mixins/reusedCode";
 import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 
 export default {
   name: "LongImage",
   components: {MainTitleSemiBold, MainParagraph, MainTitle},
-  mixins: [reusedCode],
   data() {
     return {
       mainTitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',

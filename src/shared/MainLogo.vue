@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "MainLogo",
@@ -19,7 +18,6 @@ export default {
       require: true
     }
   },
-  mixins: [reusedCode]
 }
 </script>
 

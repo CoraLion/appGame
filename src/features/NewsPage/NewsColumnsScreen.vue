@@ -15,19 +15,20 @@ import NewsCardAbridged from "@/entities/NewsCardAbridged.vue";
 import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 import "@/assets/style/animation.css"
 import ScrollColumnNews from "@/entities/ScrollColumnNews.vue";
+import {mapGetters} from "vuex";
 export default {
   name: "NewsColumnsScreen",
   components: {ScrollColumnNews, MainTitleSemiBold, NewsCardAbridged, NewsCardFull},
-  data() {
-    return {
-      subNews: [],
-      mainNews: []
+  computed: {
+    ...mapGetters(['getNewsStatus']),
+
+    subNews() {
+      return this.getNewsStatus('sub')
+    },
+    mainNews() {
+      return this.getNewsStatus('main').slice(0, 2)
     }
   },
-  created() {
-    this.subNews = this.$store.getters.getNewsReverse.filter(item => item.status === 'sub');
-    this.mainNews = this.$store.getters.getNewsReverse.filter(item => item.status === 'main').slice(0, 2)
-  }
 }
 </script>
 

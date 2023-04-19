@@ -10,13 +10,11 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import GraySwitch from "@/shared/GraySwitch.vue";
 import "@/assets/style/animation.css"
 export default {
   name: "SliderAbout",
   components: {GraySwitch},
-  mixins: [reusedCode],
   props: {
     photoSlider: {
       type: Array

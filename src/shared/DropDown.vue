@@ -16,7 +16,6 @@
 
 <script>
 import ButtonRadius from "@/shared/ButtonRadius.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "DropDown",
@@ -27,7 +26,6 @@ export default {
       require: true
     }
   },
-  mixins: [reusedCode],
   data() {
     return {
       activeDropDown: false

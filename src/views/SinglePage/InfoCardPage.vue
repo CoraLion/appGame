@@ -21,7 +21,6 @@
 
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import ArrowRow from "@/shared/ArrowSimple.vue";
 import ArrowRadius from "@/shared/ArrowRadius.vue";
 import ButtonLink from "@/shared/ButtonLink.vue";
@@ -29,19 +28,22 @@ import ButtonLink from "@/shared/ButtonLink.vue";
 export default {
   name: "InfoCardPage",
   components: {ButtonLink, ArrowRadius, ArrowRow},
-  mixins: [reusedCode],
   data() {
     return {
       textButton: 'Back',
       routeId: '',
-      infoGame: '',
-      lengthInfoGame: 0
     }
   },
-  created() {
-    this.routeId = +this.$route.params.id;
-    this.changeData();
-    this.lengthInfoGame = (this.$store.state.infoGame.length)-1;
+  computed: {
+    routeId() {
+      return this.routeId = Number(this.$route.params.id);
+    },
+    infoGame() {
+      return this.$store.state.infoGame.find(item => item.id ===  +this.routeId)
+    },
+    lengthInfoGame() {
+      return (this.$store.state.infoGame.length)-1;
+    }
   },
   methods: {
     changePost(chance) {
@@ -62,10 +64,6 @@ export default {
           this.pushId();
         }
       }
-      this.changeData()
-    },
-    changeData() {
-      this.infoGame = this.$store.state.infoGame.find(item => item.id ===  +this.routeId)
     },
     pushId() {
       this.$router.push({ name: 'ServicesInfoCard', params: { id: this.routeId } })

@@ -17,7 +17,6 @@
 <!--{ name: 'ServicesInfoCard', params: { id: infoGame.id } }-->
 <script>
 import MainParagraph from "@/shared/MainParagraph.vue";
-import reusedCode from "@/mixins/reusedCode";
 import ButtonLink from "@/shared/ButtonLink.vue";
 
 export default {
@@ -29,7 +28,6 @@ export default {
       require: true
     }
   },
-  mixins: [reusedCode],
   data() {
     return {
       textButton: 'Read more'

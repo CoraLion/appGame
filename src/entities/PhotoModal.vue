@@ -1,19 +1,19 @@
 <template>
   <transition-group name="fade-scale">
-    <div class="photo-modal-container" v-if="$store.state.activePhotoModal" @click.self="$store.commit('SET_ACTIVE_PHOTO_MODAL',false)">
+    <div class="photo-modal-container" v-if="activePhotoModal" @click.self="closeModalWindow">
       <div class="photo-modal-content">
-        <div class="cross-content" @click="$store.commit('SET_ACTIVE_PHOTO_MODAL',false)">
+        <div class="cross-content" @click="closeModalWindow">
           <img :src="getUrl(cross)" alt="cross">
         </div>
-        <img :src="getUrl(urlPath + $store.state.objectPhoto.img)" alt="picture">
+        <img :src="getUrl(urlPath + objectPhotoImg)" alt="picture">
       </div>
     </div>
   </transition-group>
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import "@/assets/style/animation.css"
+import {mapActions, mapGetters} from "vuex";
 export default {
   name: "PhotoModal",
   props: {
@@ -22,12 +22,28 @@ export default {
       require: true
     },
   },
-  mixins: [reusedCode],
   data() {
     return {
       cross: 'plus.svg',
     }
   },
+  computed: {
+    ...mapGetters(['getActivePhotoModal', 'getObjectPhotoImg']),
+
+    activePhotoModal() {
+      return this.getActivePhotoModal;
+    },
+    objectPhotoImg() {
+      return this.getObjectPhotoImg;
+    }
+  },
+  methods: {
+    ...mapActions(['ACTIVE_PHOTO_MODAL']),
+
+    closeModalWindow() {
+      this.ACTIVE_PHOTO_MODAL(false)
+    }
+  }
 }
 </script>
 

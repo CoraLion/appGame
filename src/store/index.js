@@ -160,6 +160,18 @@ export default createStore({
   getters: {
     getNewsReverse: state => {
       return state.news.reverse();
+    },
+
+    getNewsStatus: (state, getters) => status => {
+      return getters.getNewsReverse.filter(item => item.status === status);
+    },
+
+    getActivePhotoModal: state => {
+      return state.activePhotoModal;
+    },
+
+    getObjectPhotoImg: state => {
+      return state.objectPhoto.img;
     }
   },
   mutations: {
@@ -181,6 +193,21 @@ export default createStore({
     }
   },
   actions: {
+    ACTIVE_PHOTO_MODAL: (context, payload) => {
+        context.commit('SET_ACTIVE_PHOTO_MODAL', payload)
+    },
+    ACTIVE_LOADING_PAGE: (context, payload) => {
+      context.commit('SET_LOADING_PAGE', payload)
+    },
+    TEXT_SEARCH_NEWS: (context, payload) => {
+      context.commit('SET_TEXT_SEARCH_NEWS', payload)
+    },
+    OBJECT_PHOTO: (context, payload) => {
+      context.commit('SET_OBJECT_PHOTO', payload)
+    },
+    HEADER_ACTIVE: (context, payload) => {
+      context.commit('SET_HEADER_ACTIVE', payload)
+    }
   },
   modules: {
   }

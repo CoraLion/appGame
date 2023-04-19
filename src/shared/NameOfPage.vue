@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "NameOfPage",
@@ -20,7 +19,6 @@ export default {
       nameFirstPath: 'Home'
     }
   },
-  mixins: [reusedCode]
 }
 </script>
 

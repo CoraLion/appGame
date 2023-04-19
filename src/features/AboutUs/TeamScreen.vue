@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 import GraySwitch from "@/shared/GraySwitch.vue";
 import MemberTeamCard from "@/entities/MemberTeamCard.vue";
@@ -30,7 +29,6 @@ import "@/assets/style/animation.css"
 export default {
   name: "TeamScreen",
   components: {MemberTeamCard, GraySwitch, MainTitleSemiBold},
-  mixins: [reusedCode],
   data() {
     return {
       mainTitle: 'Our Team',

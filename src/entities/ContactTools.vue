@@ -17,7 +17,6 @@
 
 <script>
 import SocialNetworkTools from "@/shared/SocialNetworkTools.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "ContactTools",
@@ -38,8 +37,7 @@ export default {
         }
       ]
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

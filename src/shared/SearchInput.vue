@@ -8,11 +8,12 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
+
+import {mapActions} from "vuex";
 
 export default {
+  ...mapActions(['TEXT_SEARCH_NEWS']),
   name: "SearchInput",
-  mixins: [reusedCode],
   props: {
     placeHolder: {
       type: String,
@@ -25,8 +26,9 @@ export default {
     }
   },
   watch: {
+
     textSearch() {
-      this.$store.commit('SET_TEXT_SEARCH_NEWS', this.textSearch)
+      this.$store.dispatch('TEXT_SEARCH_NEWS',this.textSearch)
     },
     '$route.path'() {
       this.textSearch = ''

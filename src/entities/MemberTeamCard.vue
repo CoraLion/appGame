@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "MemberTeamCard",
@@ -16,8 +15,7 @@ export default {
       type: Object,
       require: true
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

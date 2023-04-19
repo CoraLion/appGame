@@ -9,11 +9,9 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "LoadingTools",
-  mixins: [reusedCode],
   data() {
     return {
       loadingGif: 'loading-gif.gif',

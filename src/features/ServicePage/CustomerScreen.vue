@@ -39,7 +39,6 @@
 import MainParagraph from "@/shared/MainParagraph.vue";
 import ReviewsCard from "@/entities/ReviewsCard.vue";
 import ArrowRow from "@/shared/ArrowSimple.vue";
-import reusedCode from "@/mixins/reusedCode";
 import ArrowRadius from "@/shared/ArrowRadius.vue";
 
 export default {
@@ -116,7 +115,6 @@ export default {
       indexActive: 0
     }
   },
-  mixins: [reusedCode],
 }
 
 </script>

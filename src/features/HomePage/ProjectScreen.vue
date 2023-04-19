@@ -26,9 +26,9 @@
 import MainTitleBold from "@/shared/MainTitleBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
 import GreyButton from "@/shared/GreyButton.vue";
-import reusedCode from "@/mixins/reusedCode";
 import "@/assets/style/animation.css"
 import PhotoModal from "@/entities/PhotoModal.vue";
+import {mapActions} from "vuex";
 export default {
   name: "ProjectScreen",
   components: {PhotoModal, GreyButton, MainParagraph, MainTitleBold},
@@ -55,13 +55,15 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['OBJECT_PHOTO', 'ACTIVE_PHOTO_MODAL']),
+
     showProject() {
       this.showAllProject = !this.showAllProject;
     },
     openPhotoModal(id) {
       this.activeIndexImage = id;
-      this.$store.commit('SET_ACTIVE_PHOTO_MODAL', true)
-      this.$store.commit('SET_OBJECT_PHOTO', this.imageProject[this.activeIndexImage])
+      this.ACTIVE_PHOTO_MODAL(true)
+      this.OBJECT_PHOTO(this.imageProject[this.activeIndexImage])
     },
   },
   computed: {
@@ -75,8 +77,7 @@ export default {
         return 0
       }
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

@@ -37,7 +37,6 @@
 import ScrollColumnNews from "@/entities/ScrollColumnNews.vue";
 import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 import VideoPlayer from "@/entities/VideoPlayer.vue";
-import reusedCode from "@/mixins/reusedCode";
 import SearchInput from "@/shared/SearchInput.vue";
 import MainTitleBold from "@/shared/MainTitleBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
@@ -47,28 +46,20 @@ export default {
   components: {MainParagraph, MainTitleBold, SearchInput, VideoPlayer, MainTitleSemiBold, ScrollColumnNews},
   data() {
     return {
-      newsCard: [],
-      mainTitle: 'News Card',
-      routeId: 0,
-      newsId: {}
+      mainTitle: 'News Card'
     }
   },
-  created() {
-    this.newsCard = this.$store.getters.getNewsReverse;
-    this.changeData();
-  },
-  watch: {
-    '$route.params.id'() {
-      this.changeData();
+  computed: {
+    newsCard() {
+      return this.$store.getters.getNewsReverse;
     },
-  },
-  methods: {
-    changeData() {
-      this.routeId = +this.$route.params.id;
-      this.newsId = this.newsCard.find(item => item.id === this.routeId)
+    newsId() {
+      return this.newsCard.find(item => item.id === this.routeId)
+    },
+    routeId() {
+      return Number(this.$route.params.id);
     }
   },
-  mixins: [reusedCode]
 }
 </script>
 

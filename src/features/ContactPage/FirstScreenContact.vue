@@ -17,7 +17,6 @@ import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
 import MapScreen from "@/entities/MapScreen.vue";
 import ContactTools from "@/entities/ContactTools.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "FirstScreenContact",
@@ -28,8 +27,7 @@ export default {
       mainTitle: 'Lorem Ipsum is simply dummy text of the printing and.',
       paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

@@ -18,12 +18,10 @@
 import VideoPlayer from "@/entities/VideoPlayer.vue";
 import MainTitleBold from "@/shared/MainTitleBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "VideoScreen",
   components: {MainParagraph, MainTitleBold, VideoPlayer},
-  mixins: [reusedCode],
   data() {
     return {
       plusContent: [

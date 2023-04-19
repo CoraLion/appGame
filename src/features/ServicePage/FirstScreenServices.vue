@@ -19,12 +19,10 @@
 
 <script>
 import StartTitlePage from "@/shared/StartTitlePage.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "FirstScreen",
   components: {StartTitlePage},
-  mixins: [reusedCode],
   data() {
     return {
       mainTitle: 'Lorem Ipsum is simply dummy text of the printing and.',

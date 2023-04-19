@@ -81,11 +81,11 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  store.commit('SET_TEXT_SEARCH_NEWS', '')
-  store.commit('SET_LOADING_PAGE', true)
+  store.dispatch('TEXT_SEARCH_NEWS', '')
+  store.dispatch('ACTIVE_LOADING_PAGE', true)
   next();
   setTimeout(() => {
-    store.commit('SET_LOADING_PAGE', false)
+    store.dispatch('ACTIVE_LOADING_PAGE', false)
   },300)
 })
 

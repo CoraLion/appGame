@@ -38,9 +38,14 @@ export default {
       }
     }
   },
+  computed: {
+    isValid() {
+      return Object.values(this.messageAllObject).every(v => v.length)
+    }
+  },
   methods: {
     getMessage() {
-      if(this.messageAllObject.firstName !== '' && this.messageAllObject.secondName !== '' && this.messageAllObject.email !== '' && this.messageAllObject.message !== '') {
+      if(this.isValid) {
         let message = JSON.parse(JSON.stringify(this.messageAllObject));
         console.log(message)
         this.messageAllObject.firstName  = ''

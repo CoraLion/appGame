@@ -20,14 +20,12 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import MainTitleSemiBold from "@/shared/MainTitleSemiBold.vue";
 import ButtonLink from "@/shared/ButtonLink.vue";
 
 export default {
   name: "NewsCardAbridged",
   components: {ButtonLink, MainTitleSemiBold},
-  mixins: [reusedCode],
   props: {
     newsCard: {
       type: Object,

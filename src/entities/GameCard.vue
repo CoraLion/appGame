@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "GameCard",
@@ -20,8 +19,7 @@ export default {
       type: Object,
       require: true
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

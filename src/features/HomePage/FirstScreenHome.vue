@@ -24,13 +24,11 @@
 <script>
 import MainParagraph from "@/shared/MainParagraph.vue";
 import GradientButton from "@/shared/GradientButton.vue";
-import reusedCode from "@/mixins/reusedCode";
 import MainTitleBold from "@/shared/MainTitleBold.vue";
 
 export default {
   name: "FirstScreen",
   components: {MainTitleBold, GradientButton, MainParagraph},
-  mixins: [reusedCode],
   data() {
     return {
       mainParagraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard.',

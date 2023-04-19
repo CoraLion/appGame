@@ -10,13 +10,10 @@ import InfoCard from "@/entities/InfoCard.vue";
 export default {
   name: "InfoScreen",
   components: {InfoCard},
-  data() {
-    return {
-      infoGame: []
+  computed: {
+    infoGame() {
+      return this.$store.state.infoGame;
     }
-  },
-  created() {
-    this.infoGame = this.$store.state.infoGame;
   }
 }
 </script>

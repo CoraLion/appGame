@@ -13,7 +13,6 @@
 
 <script>
 import FeedbackForm from "@/entities/FeedbackForm.vue";
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "FeedbackScreen",
@@ -23,8 +22,7 @@ export default {
       mainTitle: 'Say hello',
       paragraph: 'Lorem Ipsum is simply dummy text of the printing .'
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

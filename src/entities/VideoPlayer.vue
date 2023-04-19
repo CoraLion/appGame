@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import "@/assets/style/inputVideo.scss"
 export default {
   name: "VideoPlayer",
@@ -52,7 +51,6 @@ export default {
       progressTimer: 0
     }
   },
-  mixins: [reusedCode],
   methods: {
     onPlay() {
       if(this.videoFeature.paused) {
@@ -91,20 +89,21 @@ export default {
     },
     changeTime() {
       this.videoFeature.currentTime = (this.progressTimer.value * this.videoFeature.duration) / 100
+    },
+    bindVideoEvents() {
+      this.videoFeature = document.querySelector('.video');
+      this.progressTimer = document.querySelector('.styled-slider')
+      this.videoFeature.addEventListener('timeupdate', this.timer)
+      this.progressTimer.value = 0;
+      this.progressTimer.addEventListener('change', this.changeTimer)
     }
   },
   mounted() {
-    this.videoFeature = document.querySelector('.video');
-    this.progressTimer = document.querySelector('.styled-slider')
-    this.videoFeature.addEventListener('timeupdate', this.timer)
-    this.progressTimer.value = 0;
-    this.progressTimer.addEventListener('change', this.changeTimer)
+    this.bindVideoEvents();
   },
   unmounted() {
     this.videoFeature.removeEventListener('timeupdate', this.timer)
     this.progressTimer.removeEventListener('change', this.changeTimer)
-  },
-  created() {
   }
 }
 </script>

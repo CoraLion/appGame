@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import MainTitleBold from "@/shared/MainTitleBold.vue";
 import MainParagraph from "@/shared/MainParagraph.vue";
 import ButtonRadius from "@/shared/ButtonRadius.vue";
 import PhotoModal from "@/entities/PhotoModal.vue";
+import {mapActions} from "vuex";
 
 export default {
   name: "GameCardModal",
@@ -46,16 +46,17 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['OBJECT_PHOTO', 'ACTIVE_PHOTO_MODAL']),
+
     closeModalCard() {
       this.$emit('closeModal')
     },
     openPhotoModal(id) {
       this.activeIndexImage = id;
-      this.$store.commit('SET_ACTIVE_PHOTO_MODAL', true)
-      this.$store.commit('SET_OBJECT_PHOTO', this.gameCard.imageExtra[this.activeIndexImage])
+      this.ACTIVE_PHOTO_MODAL(true)
+      this.OBJECT_PHOTO(this.gameCard.imageExtra[this.activeIndexImage])
     },
-  },
-  mixins: [reusedCode],
+  }
 }
 </script>
 

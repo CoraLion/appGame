@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 import Arrow from "@/shared/ArrowSimple.vue";
 
 export default {
@@ -22,8 +21,7 @@ export default {
       type: Object,
       require: true
     }
-  },
-  mixins: [reusedCode]
+  }
 }
 </script>
 

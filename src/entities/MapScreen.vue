@@ -5,11 +5,9 @@
 </template>
 
 <script>
-import reusedCode from "@/mixins/reusedCode";
 
 export default {
   name: "MapScreen",
-  mixins: [reusedCode],
   data() {
     return {
       imageMap: 'map-global.svg'

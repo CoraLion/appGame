@@ -22,7 +22,7 @@ export default {
             return require('../assets/contact-us-page/' + picture)
         },
         changeActive(value) {
-            this.$store.commit('SET_HEADER_ACTIVE', value)
+            this.$store.dispatch('HEADER_ACTIVE', value)
         }
     }
 }
